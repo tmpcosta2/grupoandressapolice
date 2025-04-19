@@ -1,0 +1,87 @@
+.instagram-feed {
+    background-color: #f8f8f8;
+    padding: 60px 0;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px; /* Reduzir a largura máxima */
+}
+
+.instagram-feed h2 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.instagram-feed .btn {
+    margin-top: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 200px;
+}
+
+.instagram-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Reduzir o espaçamento entre os posts */
+    margin: 0 auto;
+}
+
+.instagram-post {
+    width: 220px; /* Reduzir o tamanho dos posts */
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: white;
+}
+
+.instagram-post-image {
+    background-color: #ff8072;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5rem; /* Reduzir o tamanho da fonte */
+    border-radius: 5px 5px 0 0;
+    height: 180px; /* Reduzir a altura da imagem */
+}
+
+.instagram-post-image i {
+    font-size: 2.5rem; /* Reduzir o tamanho do ícone */
+}
+
+.instagram-post-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.instagram-post-content h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.instagram-post-content p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .instagram-feed {
+        padding: 40px 15px;
+    }
+    
+    .instagram-posts {
+        justify-content: center;
+    }
+    
+    .instagram-post {
+        width: 180px; /* Ainda menor em dispositivos móveis */
+    }
+    
+    .instagram-post-image {
+        height: 150px;
+    }
+}

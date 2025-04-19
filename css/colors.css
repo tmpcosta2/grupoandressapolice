@@ -1,0 +1,93 @@
+/* Novo esquema de cores baseado no PDF enviado pelo cliente */
+:root {
+  /* Cores principais */
+  --color-primary: #4A4B4E;      /* Cinza escuro */
+  --color-secondary: #666769;    /* Cinza médio */
+  --color-tertiary: #858481;     /* Cinza médio esverdeado */
+  --color-light: #E4E4E4;        /* Cinza muito claro */
+  --color-lighter: #F5F5F5;      /* Quase branco */
+  
+  /* Cores de fundo */
+  --bg-primary: #F5F5F5;         /* Fundo principal (quase branco) */
+  --bg-secondary: #E4E4E4;       /* Fundo secundário (cinza claro) */
+  --bg-accent: #D0D0D2;          /* Fundo de destaque (cinza azulado) */
+  
+  /* Cores de texto */
+  --text-primary: #34322D;       /* Texto principal (marrom escuro) */
+  --text-secondary: #4A4B4E;     /* Texto secundário (cinza escuro) */
+  --text-light: #666769;         /* Texto claro (cinza médio) */
+  --text-on-dark: #F5F5F5;       /* Texto sobre fundos escuros */
+  
+  /* Cores de destaque */
+  --accent-primary: #4A4B4E;     /* Destaque principal */
+  --accent-secondary: #858481;   /* Destaque secundário */
+  
+  /* Cores para botões e elementos interativos */
+  --button-bg: #4A4B4E;          /* Fundo de botão */
+  --button-text: #F5F5F5;        /* Texto de botão */
+  --button-hover: #666769;       /* Fundo de botão em hover */
+  
+  /* Cores para alertas e mensagens */
+  --success: #6B8E7B;            /* Tom esverdeado para sucesso */
+  --warning: #D9B166;            /* Tom amarelado para avisos */
+  --error: #B66D6D;              /* Tom avermelhado para erros */
+}
+
+/* Aplicação das cores nos elementos principais */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+header, footer {
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+}
+
+p, li, span {
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--accent-primary);
+}
+
+a:hover {
+  color: var(--accent-secondary);
+}
+
+.btn, button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+.btn:hover, button:hover {
+  background-color: var(--button-hover);
+}
+
+/* Cores para seções específicas */
+.hero-section {
+  background-color: var(--bg-accent);
+}
+
+.testimonial {
+  background-color: var(--bg-secondary);
+}
+
+.card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--bg-secondary);
+}
+
+/* Garantir legibilidade em todas as seções */
+.dark-bg {
+  color: var(--text-on-dark);
+}
+
+.light-bg {
+  color: var(--text-primary);
+}

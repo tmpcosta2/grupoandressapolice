@@ -1,0 +1,94 @@
+/* Modificação do cabeçalho com ícone de saúde mental */
+.header-with-icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background-color: #FF8C69; /* Cor salmão principal */
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.mental-health-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  filter: brightness(0) invert(1); /* Torna o ícone branco */
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-title span {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Manter o cabeçalho com cor salmão durante a rolagem */
+header.scrolled {
+  background-color: #FF8C69 !important;
+}
+
+/* Estilos responsivos para o cabeçalho */
+@media (max-width: 768px) {
+  .header-with-icon {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .logo-container {
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+  
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+    margin-left: auto;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}

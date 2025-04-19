@@ -1,0 +1,58 @@
+/* Correções de legibilidade para textos */
+.hero h1, .hero p {
+    color: #ffffff; /* Texto branco para melhor contraste */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para melhorar legibilidade */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para melhorar contraste */
+    padding: 10px 15px; /* Espaçamento interno */
+    border-radius: 5px; /* Cantos arredondados */
+    display: inline-block; /* Para que o fundo se ajuste ao texto */
+    margin-bottom: 15px; /* Espaçamento entre elementos */
+}
+
+.page-banner h1 {
+    color: #ffffff; /* Texto branco para melhor contraste */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para melhorar legibilidade */
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente para melhorar contraste */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Cantos arredondados */
+    display: inline-block; /* Para que o fundo se ajuste ao texto */
+}
+
+/* Correção para texto escuro em fundo escuro */
+.content-box blockquote p, 
+.content-box blockquote footer {
+    color: #ffffff; /* Texto branco para melhor contraste */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com transparência */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 5px; /* Cantos arredondados */
+}
+
+/* Melhorias gerais de contraste */
+.text-justify {
+    color: #333333; /* Cor de texto mais escura para melhor legibilidade */
+}
+
+.content-box {
+    background-color: #f8f8f8; /* Fundo mais claro para melhor contraste */
+}
+
+/* Correção para cabeçalhos em banners */
+.hero, .page-banner {
+    position: relative;
+}
+
+.hero::before, .page-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)); /* Gradiente escuro para melhorar contraste */
+    z-index: 1;
+}
+
+.hero .container, .page-banner .container {
+    position: relative;
+    z-index: 2; /* Coloca o conteúdo acima do gradiente */
+}

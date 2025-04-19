@@ -1,0 +1,310 @@
+/* Melhorias gerais de design */
+:root {
+    --primary-color: #000000; /* Preto do texto e cérebro */
+    --secondary-color: var(--salmon-medium); /* Verde dos elementos do cérebro */
+    --accent-color: #b94a5e; /* Vermelho dos corações */
+    --light-accent: rgba(74, 156, 140, 0.15);
+    --dark-gray: #323232;
+    --medium-gray: #666666;
+    --light-gray: #f5f5f5;
+    --white: #ffffff;
+    --black: #000000;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Melhorias para textos */
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--dark-gray);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.6rem;
+    margin-bottom: 1.8rem;
+}
+
+h2 {
+    font-size: 2.1rem;
+    margin-bottom: 2.2rem;
+    position: relative;
+    padding-bottom: 0.7rem;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+h3 {
+    font-size: 1.6rem;
+    color: var(--secondary-color);
+}
+
+.text-justify {
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+/* Melhorias para seções */
+section {
+    padding: 90px 0;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.content-box {
+    background-color: var(--light-gray);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow);
+    margin-bottom: 35px;
+}
+
+/* Melhorias para cards */
+.service-card, .result-card, .stat-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.service-card:hover, .result-card:hover, .stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon, .result-icon {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    color: var(--secondary-color);
+}
+
+/* Melhorias para botões */
+.btn {
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Melhorias para imagens */
+.responsive-img {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+.responsive-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Melhorias para o rodapé */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 90px 0 25px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-logo img {
+    max-height: 65px;
+    margin-bottom: 25px;
+}
+
+.footer-contact h3, .footer-social h3 {
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+}
+
+.footer-contact p {
+    margin-bottom: 15px;
+}
+
+.footer-social a {
+    color: var(--white);
+    display: block;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+/* Melhorias para formulários */
+input, textarea, select {
+    padding: 14px;
+    border: 2px solid var(--light-gray);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(74, 156, 140, 0.2);
+}
+
+/* Melhorias para navegação */
+.nav-menu a {
+    font-weight: 600;
+    position: relative;
+    padding: 8px 0;
+}
+
+.nav-menu a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover:after,
+.nav-menu a.active:after {
+    width: 100%;
+}
+
+/* Melhorias para timeline */
+.timeline-item {
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 40px;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+.timeline-content {
+    background-color: var(--light-gray);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow);
+}
+
+/* Melhorias para experiência */
+.experience-item {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.experience-icon {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-right: 25px;
+    min-width: 40px;
+}
+
+.experience-content h3 {
+    margin-bottom: 10px;
+}
+
+.experience-content h4 {
+    color: var(--medium-gray);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* Animações suaves */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* Melhorias para dispositivos móveis */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    section {
+        padding: 60px 0;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .experience-item {
+        flex-direction: column;
+    }
+    
+    .experience-icon {
+        margin-bottom: 15px;
+    }
+}

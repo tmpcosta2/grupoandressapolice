@@ -1,0 +1,66 @@
+/* Ajustes para reduzir o tamanho das imagens e melhorar a visualização */
+.responsive-img {
+    max-width: 80%; /* Reduzido de 100% para 80% */
+    height: auto;
+    display: block;
+    margin: 0 auto 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.intro-image, .results-image, .about-image, .services-image {
+    margin: 2rem 0;
+    text-align: center;
+    overflow: hidden;
+    max-height: 400px; /* Limita a altura máxima */
+}
+
+.intro-image img, .results-image img, .about-image img, .services-image img {
+    max-width: 80%; /* Reduzido de 100% para 80% */
+    max-height: 350px; /* Limita a altura máxima */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes para imagens em cards */
+.service-card img, 
+.result-card img {
+    max-width: 90%;
+    height: auto;
+    max-height: 180px;
+    margin: 0 auto 1rem;
+    border-radius: 8px;
+}
+
+/* Ajustes para imagens de perfil */
+.profile-image img {
+    max-width: 90%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes para garantir espaço adequado entre imagens e texto */
+section img + p,
+section p + img {
+    margin-top: 2rem;
+}
+
+/* Ajustes para imagens na galeria */
+.gallery-item img {
+    max-width: 90%;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+/* Ajustes para imagens de fundo */
+.hero, .page-banner {
+    background-position: center 30%; /* Ajusta a posição vertical para mostrar melhor os rostos */
+}
+
+/* Espaçamento adicional para melhorar a leitura */
+.text-justify {
+    margin-bottom: 1.5rem;
+}

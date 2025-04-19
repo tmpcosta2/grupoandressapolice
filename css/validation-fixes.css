@@ -1,0 +1,47 @@
+/* Correções para os erros de validação HTML */
+
+/* Adicionar texto acessível ao botão do menu mobile */
+.mobile-menu-btn {
+    position: relative;
+}
+
+.mobile-menu-btn::after {
+    content: "Menu";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Remover espaços em branco no final das linhas */
+/* Isso é tratado no arquivo HTML diretamente */
+
+/* Estilos para o iframe do mapa */
+.map-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Estilos para números de telefone */
+.tel-number {
+    white-space: nowrap;
+}

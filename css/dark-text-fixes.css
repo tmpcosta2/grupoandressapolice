@@ -1,0 +1,87 @@
+/* Ajustes para escurecer textos específicos conforme solicitado pelo usuário */
+
+/* Página inicial */
+.cta h2 {
+  color: var(--dark-text) !important;
+  font-weight: 600;
+}
+
+/* Página sobre */
+.cta h2 {
+  color: var(--dark-text) !important;
+  font-weight: 600;
+}
+
+/* Página serviços */
+.cta h2 {
+  color: var(--dark-text) !important;
+  font-weight: 600;
+}
+
+/* Página resultados */
+.cta h2 {
+  color: var(--dark-text) !important;
+  font-weight: 600;
+}
+
+/* Página contato */
+button[type="submit"].btn.btn-primary {
+  color: var(--white-text) !important;
+  background-color: var(--salmon-primary) !important;
+  border: none;
+}
+
+.cta h2 {
+  color: var(--dark-text) !important;
+  font-weight: 600;
+}
+
+/* Botão "Ligue Agora" na página de contato */
+.cta .btn.btn-primary {
+  background-color: var(--salmon-primary) !important;
+  color: var(--white-text) !important;
+  border: none;
+}
+
+/* Remover fundo preto da citação na página de resultados */
+blockquote footer {
+  background-color: transparent !important;
+  color: var(--dark-text) !important;
+  padding: 5px 10px;
+  font-style: italic;
+}
+
+/* Padronizar botões "Entre em contato agora" em todas as páginas */
+.btn.btn-primary {
+  background-color: var(--salmon-primary) !important;
+  color: var(--white-text) !important;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn.btn-primary:hover {
+  background-color: var(--salmon-dark) !important;
+}
+
+/* Adicionar símbolos aos cards de benefícios */
+.result-card .result-icon {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.result-card .result-icon::after {
+  content: "✓";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: var(--salmon-deep);
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}

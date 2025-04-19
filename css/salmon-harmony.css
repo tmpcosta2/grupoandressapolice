@@ -1,0 +1,136 @@
+/* Harmonização adicional do site com tema salmão */
+
+/* Garantir que botões e elementos interativos usem cores salmão */
+.btn-primary {
+  background-color: var(--salmon-primary);
+  color: var(--white-text);
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--salmon-dark);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--salmon-deep);
+  border: 2px solid var(--salmon-deep);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--salmon-deep);
+  color: var(--white-text);
+}
+
+/* Harmonizar seções e fundos */
+.page-banner, 
+.cta {
+  background: linear-gradient(135deg, var(--salmon-gradient-start) 0%, var(--salmon-gradient-end) 100%);
+  color: var(--white-text);
+}
+
+.statistics {
+  background-color: var(--light-bg);
+}
+
+.stat-item {
+  background-color: white;
+  border-left: 4px solid var(--salmon-medium);
+}
+
+/* Harmonizar títulos e textos de destaque */
+h2, 
+.section-title {
+  color: var(--salmon-deep);
+}
+
+.highlight-text,
+blockquote footer {
+  color: var(--salmon-medium);
+}
+
+/* Harmonizar ícones e elementos visuais */
+.icon-feature,
+.service-icon,
+.result-icon,
+.stat-number,
+.info-icon {
+  color: var(--salmon-medium);
+}
+
+/* Harmonizar cards e boxes */
+.service-card,
+.result-card,
+.stat-card,
+.content-box {
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  border-left: 4px solid var(--salmon-light);
+}
+
+.service-card:hover,
+.result-card:hover,
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-left-color: var(--salmon-primary);
+}
+
+/* Harmonizar formulários */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--salmon-primary);
+  box-shadow: 0 0 0 2px rgba(255, 140, 105, 0.2);
+}
+
+/* Harmonizar rodapé */
+footer {
+  background-color: var(--dark-text);
+  color: var(--white-text);
+}
+
+footer h3 {
+  color: var(--salmon-light);
+}
+
+footer a {
+  color: var(--salmon-pastel);
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--salmon-primary);
+}
+
+/* Garantir que a cor salmão seja agradável e não muito clara */
+:root {
+  --salmon-primary: #FF7F50; /* Ajustado para um tom mais vibrante */
+  --salmon-deep: #E05D45;    /* Ajustado para um tom mais profundo */
+}
+
+/* Melhorar contraste em elementos importantes */
+.differential-icon,
+.result-icon,
+.service-icon {
+  background-color: var(--salmon-primary);
+  color: white;
+}
+
+/* Ajustes para garantir boa legibilidade */
+.text-justify {
+  color: var(--dark-text);
+  line-height: 1.6;
+}
+
+/* Harmonizar links */
+a:not(.btn) {
+  color: var(--salmon-deep);
+  transition: color 0.3s ease;
+}
+
+a:not(.btn):hover {
+  color: var(--salmon-primary);
+}

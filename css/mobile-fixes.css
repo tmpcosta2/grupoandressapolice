@@ -1,0 +1,131 @@
+/* Correções para responsividade em dispositivos móveis */
+
+/* Ajustes para elementos clicáveis em dispositivos touch */
+@media (max-width: 768px) {
+  /* Aumentar tamanho dos links no menu de navegação */
+  nav a {
+    padding: 12px 15px;
+    margin: 5px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Ajustar botões para tamanho mínimo recomendado para touch */
+  .btn, button, input[type="submit"], input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 10px 20px;
+  }
+  
+  /* Melhorar contraste dos botões */
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+  }
+  
+  /* Ajustar tamanho do logo */
+  .logo img {
+    max-width: 120px;
+  }
+  
+  /* Implementar menu hamburguer para dispositivos móveis */
+  .mobile-menu-btn {
+    display: block;
+    width: 44px;
+    height: 44px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  /* Ajustar layout do menu em dispositivos móveis */
+  nav ul {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--dark-color);
+    padding: 80px 20px 20px;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+  
+  nav ul.active {
+    right: 0;
+  }
+  
+  /* Ajustar containers para largura total em dispositivos móveis */
+  .container {
+    width: 100%;
+    padding: 0 15px;
+    max-width: 100%;
+  }
+  
+  /* Ajustar tamanho das fontes para melhor leitura */
+  h1 {
+    font-size: 32px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  h3 {
+    font-size: 20px;
+  }
+  
+  p, li, a {
+    font-size: 16px;
+  }
+  
+  /* Ajustar layout de cards e seções */
+  .card, .service-card, .result-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Melhorar espaçamento vertical */
+  section {
+    padding: 40px 0;
+  }
+  
+  /* Ajustar formulário de contato */
+  form input, form textarea {
+    min-height: 44px;
+    font-size: 16px; /* Evitar zoom automático em iOS */
+  }
+  
+  /* Ajustar widget do Instagram */
+  .instagram-widget {
+    width: 60px;
+    height: 60px;
+  }
+  
+  /* Ajustar botão voltar ao topo */
+  .back-to-top {
+    width: 50px;
+    height: 50px;
+    right: 20px;
+    bottom: 90px; /* Posicionar acima do widget do Instagram */
+  }
+}
+
+/* Ajustes específicos para telas muito pequenas */
+@media (max-width: 375px) {
+  h1 {
+    font-size: 28px;
+  }
+  
+  .hero {
+    padding: 60px 0;
+  }
+  
+  .container {
+    padding: 0 10px;
+  }
+}
