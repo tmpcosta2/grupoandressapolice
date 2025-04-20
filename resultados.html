@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="css/consolidated.css">
     <!-- CSS para vídeo em background -->
     <link rel="stylesheet" href="css/video-background.css">
+    <!-- CSS para cards interativos -->
+    <link rel="stylesheet" href="css/interactive-cards.css">
+    <!-- CSS para rodapé mais claro -->
+    <link rel="stylesheet" href="css/footer-light.css">
     <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Google Fonts -->
@@ -67,34 +71,41 @@
     <section class="results-overview">
         <div class="container">
             <h2>Benefícios Comprovados</h2>
-            <div class="results-grid">
-                <div class="result-card">
-                    <div class="result-icon">
+            <div class="results-cards">
+                <div class="result-card-interactive">
+                    <div class="result-icon-interactive">
                         <i class="fas fa-calendar-check"></i>
                     </div>
-                    <h3>Redução de Absenteísmo</h3>
-                    <p class="text-justify">25% a 40% de redução nas faltas relacionadas a problemas de saúde mental após implementação do programa</p>
+                    <h3 class="result-title-interactive">Redução de Absenteísmo</h3>
+                    <div class="result-stat-interactive">40%</div>
+                    <p class="result-description-interactive">Redução nas faltas relacionadas a problemas de saúde mental após implementação do programa</p>
                 </div>
-                <div class="result-card">
-                    <div class="result-icon">
+                
+                <div class="result-card-interactive">
+                    <div class="result-icon-interactive">
                         <i class="fas fa-hand-holding-medical"></i>
                     </div>
-                    <h3>Economia em Saúde</h3>
-                    <p class="text-justify">Redução significativa nos gastos com planos de saúde e tratamentos médicos relacionados ao estresse</p>
+                    <h3 class="result-title-interactive">Economia em Saúde</h3>
+                    <div class="result-stat-interactive">35%</div>
+                    <p class="result-description-interactive">Redução nos gastos com planos de saúde e tratamentos médicos relacionados ao estresse</p>
                 </div>
-                <div class="result-card">
-                    <div class="result-icon">
+                
+                <div class="result-card-interactive">
+                    <div class="result-icon-interactive">
                         <i class="fas fa-heart"></i>
                     </div>
-                    <h3>Clima Organizacional</h3>
-                    <p class="text-justify">Melhoria mensurável no engajamento, satisfação e bem-estar geral dos colaboradores</p>
+                    <h3 class="result-title-interactive">Clima Organizacional</h3>
+                    <div class="result-stat-interactive">45%</div>
+                    <p class="result-description-interactive">Melhoria mensurável no engajamento, satisfação e bem-estar geral dos colaboradores</p>
                 </div>
-                <div class="result-card">
-                    <div class="result-icon">
+                
+                <div class="result-card-interactive">
+                    <div class="result-icon-interactive">
                         <i class="fas fa-user-friends"></i>
                     </div>
-                    <h3>Retenção de Talentos</h3>
-                    <p class="text-justify">Redução média de 30% na rotatividade de pessoal em áreas com alto índice de estresse</p>
+                    <h3 class="result-title-interactive">Retenção de Talentos</h3>
+                    <div class="result-stat-interactive">30%</div>
+                    <p class="result-description-interactive">Redução média na rotatividade de pessoal em áreas com alto índice de estresse</p>
                 </div>
             </div>
         </div>
@@ -162,40 +173,77 @@
     <section class="statistics">
         <div class="container">
             <h2>Panorama da Saúde Mental no Trabalho</h2>
-            <div class="stats-container">
-                <div class="stat-item">
-                    <div class="stat-number">18%</div>
-                    <div class="stat-description">dos adultos em idade produtiva apresentam algum transtorno mental no Brasil</div>
+            <div class="results-cards">
+                <div class="result-card-interactive">
+                    <div class="result-icon-interactive">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3 class="result-title-interactive">Prevalência</h3>
+                    <div class="result-stat-interactive">18%</div>
+                    <p class="result-description-interactive">dos adultos em idade produtiva apresentam algum transtorno mental no Brasil</p>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">1º</div>
-                    <div class="stat-description">Brasil lidera o ranking mundial de transtornos de ansiedade segundo a OMS</div>
+                
+                <div class="result-card-interactive">
+                    <div class="result-icon-interactive">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="result-title-interactive">Ranking</h3>
+                    <div class="result-stat-interactive">1º</div>
+                    <p class="result-description-interactive">Brasil lidera o ranking mundial de transtornos de ansiedade segundo a OMS</p>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">576.423</div>
-                    <div class="stat-description">afastamentos do trabalho por transtornos mentais registrados no Brasil em 2024</div>
+                
+                <div class="result-card-interactive">
+                    <div class="result-icon-interactive">
+                        <i class="fas fa-user-clock"></i>
+                    </div>
+                    <h3 class="result-title-interactive">Afastamentos</h3>
+                    <div class="result-stat-interactive">576k</div>
+                    <p class="result-description-interactive">afastamentos do trabalho por transtornos mentais registrados no Brasil em 2024</p>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">385%</div>
-                    <div class="stat-description">aumento nos afastamentos por ansiedade na última década</div>
+                
+                <div class="result-card-interactive">
+                    <div class="result-icon-interactive">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="result-title-interactive">Crescimento</h3>
+                    <div class="result-stat-interactive">385%</div>
+                    <p class="result-description-interactive">aumento nos afastamentos por ansiedade na última década</p>
                 </div>
-            </div>
-            <div class="stats-container">
-                <div class="stat-item">
-                    <div class="stat-number">15bi</div>
-                    <div class="stat-description">dias de trabalho perdidos globalmente devido a transtornos mentais por ano</div>
+                
+                <div class="result-card-interactive">
+                    <div class="result-icon-interactive">
+                        <i class="fas fa-calendar-times"></i>
+                    </div>
+                    <h3 class="result-title-interactive">Dias Perdidos</h3>
+                    <div class="result-stat-interactive">15bi</div>
+                    <p class="result-description-interactive">dias de trabalho perdidos globalmente devido a transtornos mentais por ano</p>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">US$1,3tri</div>
-                    <div class="stat-description">custo anual global em produtividade reduzida devido a problemas de saúde mental</div>
+                
+                <div class="result-card-interactive">
+                    <div class="result-icon-interactive">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="result-title-interactive">Custo Global</h3>
+                    <div class="result-stat-interactive">$1,3tri</div>
+                    <p class="result-description-interactive">custo anual global em produtividade reduzida devido a problemas de saúde mental</p>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">R$510bi</div>
-                    <div class="stat-description">impacto econômico estimado dos transtornos mentais no Brasil anualmente</div>
+                
+                <div class="result-card-interactive">
+                    <div class="result-icon-interactive">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3 class="result-title-interactive">Impacto Brasil</h3>
+                    <div class="result-stat-interactive">R$510bi</div>
+                    <p class="result-description-interactive">impacto econômico estimado dos transtornos mentais no Brasil anualmente</p>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">2025</div>
-                    <div class="stat-description">ano em que a saúde mental se tornou prioridade obrigatória nas empresas brasileiras</div>
+                
+                <div class="result-card-interactive">
+                    <div class="result-icon-interactive">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="result-title-interactive">Marco Legal</h3>
+                    <div class="result-stat-interactive">2025</div>
+                    <p class="result-description-interactive">ano em que a saúde mental se tornou prioridade obrigatória nas empresas brasileiras</p>
                 </div>
             </div>
             <p class="source">Fontes: Organização Mundial da Saúde (2024), Ministério da Saúde do Brasil (2025), Instituto Nacional de Seguridade Social (2024), Associação Brasileira de Psiquiatria (2025).</p>

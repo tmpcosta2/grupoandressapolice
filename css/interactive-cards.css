@@ -1,0 +1,197 @@
+/* Estilos para cards interativos nas páginas de serviços e resultados */
+
+/* Variáveis CSS */
+:root {
+    --card-hover-transform: translateY(-10px);
+    --card-transition: all 0.4s ease;
+    --card-border-radius: 12px;
+    --card-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    --card-hover-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Cards interativos para serviços */
+.services-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.service-card-interactive {
+    background: #fff;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--card-box-shadow);
+    overflow: hidden;
+    transition: var(--card-transition);
+    position: relative;
+    border: 1px solid rgba(255, 112, 67, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card-interactive:hover {
+    transform: var(--card-hover-transform);
+    box-shadow: var(--card-hover-box-shadow);
+    border-color: var(--primary-color);
+}
+
+.service-card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.service-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-card-interactive:hover .service-card-image img {
+    transform: scale(1.05);
+}
+
+.service-card-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.service-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.service-card-description {
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.service-card-features {
+    margin-bottom: 20px;
+}
+
+.service-card-features li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.service-card-features li:before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.service-card-button {
+    text-align: center;
+    margin-top: auto;
+}
+
+.service-card-button .btn {
+    width: 100%;
+    padding: 12px;
+}
+
+/* Cards interativos para resultados */
+.results-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.result-card-interactive {
+    background: linear-gradient(145deg, #fff 0%, #f9f9f9 100%);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--card-box-shadow);
+    padding: 30px;
+    transition: var(--card-transition);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 112, 67, 0.1);
+    height: 100%;
+}
+
+.result-card-interactive:hover {
+    transform: var(--card-hover-transform);
+    box-shadow: var(--card-hover-box-shadow);
+    border-color: var(--primary-color);
+}
+
+.result-card-interactive:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.result-card-interactive:hover:before {
+    transform: scaleX(1);
+}
+
+.result-icon-interactive {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.result-card-interactive:hover .result-icon-interactive {
+    transform: scale(1.1);
+}
+
+.result-title-interactive {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.result-description-interactive {
+    color: #666;
+}
+
+.result-stat-interactive {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.result-card-interactive:hover .result-stat-interactive {
+    transform: scale(1.1);
+    color: var(--accent-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .services-cards, .results-cards {
+        grid-template-columns: 1fr;
+    }
+}
