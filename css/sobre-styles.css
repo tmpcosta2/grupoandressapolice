@@ -1,5 +1,50 @@
 /* Estilos específicos para a página Sobre */
 
+/* Estilos para a seção Nossa Trajetória */
+.history-mission {
+    padding: 4rem 0;        /* afasta o bloco dos elementos superiores e inferiores */
+}
+
+.history-mission h2 {
+    font-size: 2rem;
+    letter-spacing: 0.02em; /* espaçamento sutil entre caracteres para elegância */
+    margin-bottom: 1rem;
+}
+
+.history-mission .content-box {
+    max-width: 800px;       /* impede que as linhas fiquem longas demais */
+    margin: 0 auto;         /* centra horizontalmente o bloco no contêiner */
+    padding: 2rem 1rem;     /* garante um acolchoamento interno uniforme */
+    background-color: #fafafa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+.history-mission .content-box p {
+    line-height: 1.6;       /* aumenta o espaço vertical interno de cada linha */
+    margin-bottom: 1.5rem;  /* cria "respiração" antes do próximo parágrafo */
+    font-size: 1rem;
+    color: #333;            /* tom de cinza escuro é menos agressivo que o preto puro */
+}
+
+.intro-image {
+    float: right;
+    width: 40%;
+    margin: 0 0 1.5rem 1.5rem; /* espaço à esquerda e abaixo para evitar sobreposição */
+}
+
+@media (max-width: 768px) {
+    .intro-image { 
+        float: none; 
+        width: 100%; 
+        margin: 1rem 0; 
+    }
+}
+
+/* Classes utilitárias para ajustes rápidos */
+.mt-3 { margin-top: 1.5rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+
 /* Layout de duas colunas para o perfil */
 .profile-content {
     display: flex;
@@ -34,6 +79,7 @@
     margin-bottom: 10px;
     position: relative;
     padding-left: 15px;
+    line-height: 1.6;
 }
 
 .profile-text li:before {
@@ -49,6 +95,7 @@
 
 .profile-text p {
     margin-top: 20px;
+    line-height: 1.6;
 }
 
 .profile {
@@ -64,6 +111,8 @@
     border: var(--glassmorphism-border);
     box-shadow: var(--glassmorphism-shadow);
     padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .profile h2 {
@@ -71,6 +120,7 @@
     margin-bottom: 30px;
     font-size: 2.2rem;
     color: var(--text-color);
+    letter-spacing: 0.02em;
 }
 
 .profile-image img {
@@ -83,6 +133,86 @@
     transform: scale(1.02);
 }
 
+/* Estilos para a seção Nossa Metodologia */
+.approach {
+    padding: 4rem 0;
+}
+
+.approach h2 {
+    font-size: 2rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.approach .content-box {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    background-color: #fafafa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+.approach .content-box p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Estilos para a seção Nossos Valores */
+.differentials {
+    padding: 4rem 0;
+}
+
+.differentials h2 {
+    font-size: 2rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.differentials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.differential-card {
+    background-color: #fafafa;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.differential-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.differential-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.differential-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.differential-card p {
+    line-height: 1.6;
+    color: #333;
+}
+
 /* Responsividade para o layout de duas colunas */
 @media (max-width: 768px) {
     .profile-content {
@@ -92,5 +222,9 @@
     
     .profile-image, .profile-text {
         max-width: 100%;
+    }
+    
+    .differentials-grid {
+        grid-template-columns: 1fr;
     }
 }
