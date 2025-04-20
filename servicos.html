@@ -19,12 +19,199 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos para os cards de serviços */
+        .service-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background-color: #fff;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .service-card-header {
+            height: 200px;
+            background: linear-gradient(135deg, #ff7043 0%, #ff9a76 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .service-card-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+        
+        .service-card-icon i {
+            font-size: 36px;
+            color: #ff7043;
+        }
+        
+        .service-card-content {
+            padding: 60px 30px 30px;
+            text-align: center;
+        }
+        
+        .service-card-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .service-card-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+        
+        .service-card-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .service-card-features li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .service-card-features li:before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #ff7043;
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        
+        .service-card-button {
+            text-align: center;
+        }
+        
+        .service-card-button .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #ff7043;
+            color: #fff;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        
+        .service-card-button .btn:hover {
+            background-color: #e65c35;
+        }
+        
+        /* Estilos para a seção de introdução */
+        .services-intro {
+            padding: 80px 0 40px;
+        }
+        
+        .intro-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+        }
+        
+        .intro-title {
+            color: #ff7043;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .intro-text {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        /* Estilos para a seção de serviços */
+        .services-section {
+            padding: 60px 0 80px;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-card-header {
+                height: 150px;
+            }
+            
+            .intro-box {
+                padding: 30px;
+            }
+            
+            .intro-title {
+                font-size: 28px;
+            }
+            
+            .intro-text {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Cabeçalho -->
     <header class="header-with-icon">
         <div class="container">
-            <div class="logo-container"><img src="img/icons/mental-health.svg" alt="Ícone de Saúde Mental" class="mental-health-icon">
+            <div class="logo-container">
+                <img src="img/icons/mental-health.svg" alt="Ícone de Saúde Mental" class="mental-health-icon">
                 <a href="index.html" class="site-title">Grupo Andressa Police<br><span>Saúde Mental Ocupacional</span></a>
             </div>
             <nav>
@@ -44,169 +231,141 @@
         </div>
     </header>
 
-    <!-- Banner da Página -->
-    <section class="page-banner">
-        <div class="video-background">
-            <video autoplay muted loop playsinline>
-                <source src="videos/office-team.mp4" type="video/mp4">
-                Seu navegador não suporta vídeos HTML5.
-            </video>
-        </div>
-        <div class="video-overlay"></div>
-        <div class="container">
-            <h1>Soluções em Saúde Mental Ocupacional</h1>
-        </div>
-    </section>
-
     <!-- Introdução aos Serviços -->
     <section class="services-intro">
         <div class="container">
-            <div class="content-box" style="background: var(--glassmorphism-bg); backdrop-filter: blur(var(--glassmorphism-blur)); -webkit-backdrop-filter: blur(var(--glassmorphism-blur)); border-radius: 20px; border: var(--glassmorphism-border); box-shadow: var(--glassmorphism-shadow); padding: 40px; margin-top: -50px; position: relative; z-index: 10;">
-                <h2 style="color: var(--primary-color); margin-bottom: 20px; text-align: center; font-size: 2.2rem;">Excelência em Saúde Mental Ocupacional</h2>
-                <p class="text-justify" style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px;">O <strong>Grupo Andressa Police</strong> desenvolve soluções completas em saúde mental ocupacional, com programas personalizados que atendem às necessidades específicas de cada organização. Nossa abordagem integrada combina avaliação, prevenção e intervenção para criar ambientes de trabalho mais saudáveis e produtivos.</p>
+            <div class="intro-box">
+                <h2 class="intro-title">Excelência em Saúde Mental Ocupacional</h2>
+                <p class="intro-text">O <strong>Grupo Andressa Police</strong> desenvolve soluções completas em saúde mental ocupacional, com programas personalizados que atendem às necessidades específicas de cada organização. Nossa abordagem integrada combina avaliação, prevenção e intervenção para criar ambientes de trabalho mais saudáveis e produtivos.</p>
                 
-                <p class="text-justify" style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 30px;">Nossos serviços estão alinhados com as exigências da atualização da <strong>Norma Regulamentadora nº 1 (NR-1)</strong>, que a partir de maio de 2025 obriga as empresas a identificarem riscos psicossociais e implementarem medidas para gerenciar a saúde mental dos profissionais.</p>
-                <div class="intro-image" style="text-align: center; margin-top: 20px;">
-                    <img src="img/brain/brain_1.jpg" alt="Saúde mental e cérebro" class="responsive-img" style="border-radius: 10px; box-shadow: var(--box-shadow); max-width: 100%; height: auto;">
-                </div>
+                <p class="intro-text">Nossos serviços estão alinhados com as exigências da atualização da <strong>Norma Regulamentadora nº 1 (NR-1)</strong>, que a partir de maio de 2025 obriga as empresas a identificarem riscos psicossociais e implementarem medidas para gerenciar a saúde mental dos profissionais.</p>
             </div>
         </div>
     </section>
 
     <!-- Cards de Serviços -->
-    <section class="services-section" style="padding: 80px 0; background: linear-gradient(135deg, #f9f9f9 0%, #f5f5f5 100%);">
+    <section class="services-section">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 40px;">
-                <h2 style="color: var(--text-color); font-size: 2.5rem; margin-bottom: 15px; font-weight: 700;">Nossos Serviços</h2>
-                <p style="max-width: 800px; margin: 0 auto; color: #666; font-size: 1.1rem;">Soluções personalizadas para promover a saúde mental e o bem-estar no ambiente de trabalho.</p>
-            </div>
-            <div class="services-cards">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <p class="section-subtitle">Soluções personalizadas para promover a saúde mental e o bem-estar no ambiente de trabalho.</p>
+            
+            <div class="services-grid">
                 <!-- Card 1 -->
-                <div class="service-card-interactive" style="border: none; background: var(--glassmorphism-bg); backdrop-filter: blur(var(--glassmorphism-blur)); box-shadow: var(--glassmorphism-shadow);">
-                    <div class="service-card-image" style="position: relative; overflow: hidden; border-radius: 10px 10px 0 0;">
-                        <img src="img/workplace/workplace_1.jpg" alt="Diagnóstico e Avaliação de Riscos" style="transition: transform 0.5s ease;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)); z-index: 1;"></div>
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <div class="service-card-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
                     </div>
-                    <div class="service-card-content" style="padding: 30px;">
-                        <div class="service-card-icon" style="background: rgba(255, 112, 67, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: -60px auto 20px; position: relative; z-index: 2; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                            <i class="fas fa-brain" style="font-size: 2rem; color: var(--primary-color);"></i>
-                        </div>
-                        <h3 class="service-card-title" style="text-align: center; font-size: 1.5rem; margin-bottom: 20px; color: var(--text-color); font-weight: 600;">Diagnóstico e Avaliação de Riscos</h3>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Diagnóstico e Avaliação de Riscos</h3>
                         <div class="service-card-description">
-                            <p class="text-justify" style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px; color: #555;">Nossa avaliação fornece um diagnóstico preciso dos fatores que podem estar afetando a saúde mental dos colaboradores, permitindo intervenções direcionadas e eficazes.</p>
+                            <p>Nossa avaliação fornece um diagnóstico preciso dos fatores que podem estar afetando a saúde mental dos colaboradores, permitindo intervenções direcionadas e eficazes.</p>
                         </div>
-                        <ul class="service-card-features" style="margin-bottom: 25px;">
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Mapeamento completo dos fatores de risco psicossocial</li>
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Metodologias validadas cientificamente</li>
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Relatório detalhado com recomendações</li>
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Plano de ação personalizado</li>
+                        <ul class="service-card-features">
+                            <li>Mapeamento completo dos fatores de risco psicossocial</li>
+                            <li>Metodologias validadas cientificamente</li>
+                            <li>Relatório detalhado com recomendações</li>
+                            <li>Plano de ação personalizado</li>
                         </ul>
-                        <div class="service-card-button" style="text-align: center;">
-                            <a href="contato.html" class="btn btn-primary" style="width: 100%; padding: 12px; font-weight: 600; letter-spacing: 0.5px;">Saiba mais</a>
+                        <div class="service-card-button">
+                            <a href="contato.html" class="btn">Saiba mais</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="service-card-interactive" style="border: none; background: var(--glassmorphism-bg); backdrop-filter: blur(var(--glassmorphism-blur)); box-shadow: var(--glassmorphism-shadow);">
-                    <div class="service-card-image" style="position: relative; overflow: hidden; border-radius: 10px 10px 0 0;">
-                        <img src="img/workplace/workplace_2.jpg" alt="Programa de Gerenciamento de Riscos Psicossociais" style="transition: transform 0.5s ease;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)); z-index: 1;"></div>
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <div class="service-card-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
                     </div>
-                    <div class="service-card-content" style="padding: 30px;">
-                        <div class="service-card-icon" style="background: rgba(255, 112, 67, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: -60px auto 20px; position: relative; z-index: 2; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                            <i class="fas fa-map-marked-alt" style="font-size: 2rem; color: var(--primary-color);"></i>
-                        </div>
-                        <h3 class="service-card-title" style="text-align: center; font-size: 1.5rem; margin-bottom: 20px; color: var(--text-color); font-weight: 600;">Gerenciamento de Riscos Psicossociais</h3>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Gerenciamento de Riscos Psicossociais</h3>
                         <div class="service-card-description">
-                            <p class="text-justify" style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px; color: #555;">Nosso programa é desenvolvido para atender às necessidades específicas de cada organização, considerando sua cultura e desafios particulares para uma implementação eficaz.</p>
+                            <p>Nosso programa é desenvolvido para atender às necessidades específicas de cada organização, considerando sua cultura e desafios particulares para uma implementação eficaz.</p>
                         </div>
-                        <ul class="service-card-features" style="margin-bottom: 25px;">
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Estratégias personalizadas baseadas no diagnóstico</li>
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Implementação de medidas preventivas</li>
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Monitoramento contínuo de indicadores</li>
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Ajustes periódicos baseados em resultados</li>
+                        <ul class="service-card-features">
+                            <li>Estratégias personalizadas baseadas no diagnóstico</li>
+                            <li>Implementação de medidas preventivas</li>
+                            <li>Monitoramento contínuo de indicadores</li>
+                            <li>Ajustes periódicos baseados em resultados</li>
                         </ul>
-                        <div class="service-card-button" style="text-align: center;">
-                            <a href="contato.html" class="btn btn-primary" style="width: 100%; padding: 12px; font-weight: 600; letter-spacing: 0.5px;">Saiba mais</a>
+                        <div class="service-card-button">
+                            <a href="contato.html" class="btn">Saiba mais</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="service-card-interactive" style="border: none; background: var(--glassmorphism-bg); backdrop-filter: blur(var(--glassmorphism-blur)); box-shadow: var(--glassmorphism-shadow);">
-                    <div class="service-card-image" style="position: relative; overflow: hidden; border-radius: 10px 10px 0 0;">
-                        <img src="img/brain/brain_2.jpg" alt="Programas de Prevenção e Bem-estar" style="transition: transform 0.5s ease;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)); z-index: 1;"></div>
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <div class="service-card-icon">
+                            <i class="fas fa-laptop-medical"></i>
+                        </div>
                     </div>
-                    <div class="service-card-content" style="padding: 30px;">
-                        <div class="service-card-icon" style="background: rgba(255, 112, 67, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: -60px auto 20px; position: relative; z-index: 2; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                            <i class="fas fa-laptop-medical" style="font-size: 2rem; color: var(--primary-color);"></i>
-                        </div>
-                        <h3 class="service-card-title" style="text-align: center; font-size: 1.5rem; margin-bottom: 20px; color: var(--text-color); font-weight: 600;">Prevenção e Bem-estar</h3>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Prevenção e Bem-estar</h3>
                         <div class="service-card-description">
-                            <p class="text-justify" style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px; color: #555;">Nossos programas são desenvolvidos para reduzir a incidência de transtornos mentais como ansiedade, depressão e burnout no ambiente de trabalho, promovendo uma cultura de bem-estar.</p>
+                            <p>Nossos programas são desenvolvidos para reduzir a incidência de transtornos mentais como ansiedade, depressão e burnout no ambiente de trabalho, promovendo uma cultura de bem-estar.</p>
                         </div>
-                        <ul class="service-card-features" style="margin-bottom: 25px;">
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Workshops e treinamentos sobre saúde mental</li>
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Técnicas de gerenciamento de estresse</li>
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Promoção de hábitos saudáveis</li>
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Campanhas de conscientização</li>
+                        <ul class="service-card-features">
+                            <li>Workshops e treinamentos sobre saúde mental</li>
+                            <li>Técnicas de gerenciamento de estresse</li>
+                            <li>Promoção de hábitos saudáveis</li>
+                            <li>Campanhas de conscientização</li>
                         </ul>
-                        <div class="service-card-button" style="text-align: center;">
-                            <a href="contato.html" class="btn btn-primary" style="width: 100%; padding: 12px; font-weight: 600; letter-spacing: 0.5px;">Saiba mais</a>
+                        <div class="service-card-button">
+                            <a href="contato.html" class="btn">Saiba mais</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 4 -->
-                <div class="service-card-interactive" style="border: none; background: var(--glassmorphism-bg); backdrop-filter: blur(var(--glassmorphism-blur)); box-shadow: var(--glassmorphism-shadow);">
-                    <div class="service-card-image" style="position: relative; overflow: hidden; border-radius: 10px 10px 0 0;">
-                        <img src="img/wellness/wellness_1.jpg" alt="Análise Setorial de Riscos" style="transition: transform 0.5s ease;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)); z-index: 1;"></div>
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <div class="service-card-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
                     </div>
-                    <div class="service-card-content" style="padding: 30px;">
-                        <div class="service-card-icon" style="background: rgba(255, 112, 67, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: -60px auto 20px; position: relative; z-index: 2; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                            <i class="fas fa-chart-pie" style="font-size: 2rem; color: var(--primary-color);"></i>
-                        </div>
-                        <h3 class="service-card-title" style="text-align: center; font-size: 1.5rem; margin-bottom: 20px; color: var(--text-color); font-weight: 600;">Análise Setorial de Riscos</h3>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Análise Setorial de Riscos</h3>
                         <div class="service-card-description">
-                            <p class="text-justify" style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px; color: #555;">Nossa análise setorial permite identificar com precisão as áreas da organização que apresentam maior risco psicológico, possibilitando intervenções estratégicas e eficientes.</p>
+                            <p>Identificamos os fatores de risco específicos de cada setor da organização, permitindo intervenções direcionadas e eficientes para cada área de trabalho.</p>
                         </div>
-                        <ul class="service-card-features" style="margin-bottom: 25px;">
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Identificação de departamentos vulneráveis</li>
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Análise de fatores organizacionais específicos</li>
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Planos de intervenção direcionados</li>
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Priorização de ações baseadas em níveis de risco</li>
+                        <ul class="service-card-features">
+                            <li>Avaliação personalizada por departamento</li>
+                            <li>Identificação de fatores de risco específicos</li>
+                            <li>Comparativo entre setores</li>
+                            <li>Recomendações específicas por área</li>
                         </ul>
-                        <div class="service-card-button" style="text-align: center;">
-                            <a href="contato.html" class="btn btn-primary" style="width: 100%; padding: 12px; font-weight: 600; letter-spacing: 0.5px;">Saiba mais</a>
+                        <div class="service-card-button">
+                            <a href="contato.html" class="btn">Saiba mais</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 5 -->
-                <div class="service-card-interactive" style="border: none; background: var(--glassmorphism-bg); backdrop-filter: blur(var(--glassmorphism-blur)); box-shadow: var(--glassmorphism-shadow);">
-                    <div class="service-card-image" style="position: relative; overflow: hidden; border-radius: 10px 10px 0 0;">
-                        <img src="img/mindfulness/mindfulness_1.jpg" alt="Capacitação e Desenvolvimento" style="transition: transform 0.5s ease;">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)); z-index: 1;"></div>
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <div class="service-card-icon">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
                     </div>
-                    <div class="service-card-content" style="padding: 30px;">
-                        <div class="service-card-icon" style="background: rgba(255, 112, 67, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: -60px auto 20px; position: relative; z-index: 2; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                            <i class="fas fa-users-cog" style="font-size: 2rem; color: var(--primary-color);"></i>
-                        </div>
-                        <h3 class="service-card-title" style="text-align: center; font-size: 1.5rem; margin-bottom: 20px; color: var(--text-color); font-weight: 600;">Capacitação e Desenvolvimento</h3>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Capacitação e Desenvolvimento</h3>
                         <div class="service-card-description">
-                            <p class="text-justify" style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 20px; color: #555;">Nossos programas de capacitação preparam líderes e colaboradores para promover um ambiente de trabalho mentalmente saudável e construir uma cultura organizacional resiliente.</p>
+                            <p>Preparamos líderes e equipes para identificar, prevenir e lidar com questões de saúde mental no ambiente de trabalho, criando uma cultura organizacional mais saudável.</p>
                         </div>
-                        <ul class="service-card-features" style="margin-bottom: 25px;">
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Treinamento de lideranças</li>
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Desenvolvimento de habilidades de comunicação</li>
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Capacitação para lidar com situações de crise</li>
-                            <li style="list-style: none; padding-left: 30px; position: relative; margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-color); position: absolute; left: 0; top: 3px;"></i> Formação de multiplicadores internos</li>
+                        <ul class="service-card-features">
+                            <li>Treinamento para líderes e gestores</li>
+                            <li>Desenvolvimento de habilidades socioemocionais</li>
+                            <li>Formação de multiplicadores internos</li>
+                            <li>Workshops práticos e vivenciais</li>
                         </ul>
-                        <div class="service-card-button" style="text-align: center;">
-                            <a href="contato.html" class="btn btn-primary" style="width: 100%; padding: 12px; font-weight: 600; letter-spacing: 0.5px;">Saiba mais</a>
+                        <div class="service-card-button">
+                            <a href="contato.html" class="btn">Saiba mais</a>
                         </div>
                     </div>
                 </div>
@@ -214,15 +373,12 @@
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- CTA Final -->
     <section class="cta">
         <div class="container">
-            <h2>Invista na saúde mental da sua equipe</h2>
-            <p class="text-justify">Entre em contato conosco para conhecer como nossos serviços podem ser adaptados às necessidades específicas da sua organização. Estamos prontos para desenvolver um programa personalizado que traga resultados concretos para sua empresa e seus colaboradores.</p>
-            <a href="contato.html" class="btn btn-primary">Solicite uma proposta</a>
-            <a href="https://wa.me/5569992235267" target="_blank" class="btn btn-primary" style="background-color: #25D366; margin-left: 10px;">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
+            <h2>Transforme a saúde mental na sua empresa</h2>
+            <p>Entre em contato conosco para conhecer como nossos programas podem beneficiar sua organização e seus colaboradores. Estamos prontos para desenvolver uma solução personalizada que atenda às necessidades específicas da sua empresa.</p>
+            <a href="contato.html" class="btn btn-primary">Entre em contato agora</a>
         </div>
     </section>
 
@@ -244,7 +400,7 @@
                 </div>
                 <div class="footer-social">
                     <h3>Redes Sociais</h3>
-                    <a href="https://www.instagram.com/draandressapolice/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://www.instagram.com/draandressapolice/?hl=en" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
                 </div>
             </div>
             <div class="footer-bottom">
